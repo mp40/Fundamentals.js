@@ -9,6 +9,9 @@ class Stack {
     isFull(){
         return this.items.length === this.capacity ? true : false
     }
+    push(element){
+        this.items.push(element)
+    }
 }
 
 module.exports = Stack
