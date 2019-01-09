@@ -1,6 +1,6 @@
 const Queue = require('./queueDS')
 
-describe.only('the Queue data structure',()=>{
+describe('the Queue data structure',()=>{
     // Set Up
     let queue = undefined;
     beforeEach(()=>{
