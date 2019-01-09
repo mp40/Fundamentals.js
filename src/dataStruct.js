@@ -17,6 +17,9 @@ class Stack {
         return element
     }
     pop(){
+        if(this.items.length < 1){
+            return "Empty"
+        }
         return this.items.pop()
     }
 }

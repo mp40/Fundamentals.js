@@ -56,6 +56,15 @@ describe ('the Stack data structure',()=>{
             stack.pop()
             expect(stack.items[stack.items.length-1]).toBe(1)
         })
+        it('should return the element removed',()=>{
+            for (let i=0; i<3; i++){
+                stack.push(i)
+            }
+            expect(stack.pop()).toBe(2)
+        })
+        it('should return "Empty" if Stack already empty',()=>{
+            expect(stack.pop()).toBe("Empty")
+        })
     })
 })
 
