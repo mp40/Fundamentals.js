@@ -37,7 +37,7 @@ describe ('the Stack data structure',()=>{
             stack.push(4)
             expect(stack.items[stack.items.length-1]).toBe(4)
         })
-        it('should return Full if stack full',()=>{
+        it('should return Full if stack already full',()=>{
             for(let i=0; i<3; i++){
                 stack.push(i)
             } 
