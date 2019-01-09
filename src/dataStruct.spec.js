@@ -66,5 +66,11 @@ describe ('the Stack data structure',()=>{
             expect(stack.pop()).toBe("Empty")
         })
     })
+    describe('the Stack Peek method',()=>{
+        it('should return the last element in the stack',()=>{
+            stack.push(9)
+            expect(stack.peek()).toBe(9)
+        })
+    })
 })
 
