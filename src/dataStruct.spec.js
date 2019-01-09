@@ -47,5 +47,15 @@ describe ('the Stack data structure',()=>{
             expect(stack.push(2)).toBe(2)
         })
     })
+    describe('the Stack should have a pop method that removes last element of Stack',()=>{
+        it('should remove last item from the Stack',()=>{
+            for (let i=0; i<3; i++){
+                stack.push(i)
+            }
+            expect(stack.isFull()).toBe(true)
+            stack.pop()
+            expect(stack.items[stack.items.length-1]).toBe(1)
+        })
+    })
 })
 
