@@ -3,6 +3,19 @@ class Queue {
         this.items = []
         this.capacity = capacity
     }
+    isEmpty(){
+        return this.items.length < 1 ? true : false
+    }
+    isFull(){
+        return this.items.length === this.capacity ? true : false
+    }
+    enqueue(element){
+        if(this.isFull()){
+            return "Full"
+        }
+        this.items.unshift(element)
+        return element
+    }
 }
 
 module.exports = Queue
