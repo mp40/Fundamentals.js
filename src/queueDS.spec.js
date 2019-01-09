@@ -40,4 +40,19 @@ describe.only('the Queue data structure',()=>{
             expect(queue.enqueue(7)).toBe(7)
         })
     })
+    describe('the Queue should have a dequeue method',()=>{
+        it('should remove the element at the start of the Queue',()=>{
+            queue.items = [7]
+            expect(queue.items[0]).toBe(7)
+            queue.dequeue()
+            expect(queue.items[0]).toBe(undefined)
+        })
+        it('should return the element removed',()=>{
+            queue.items = [6,7,8]
+            expect(queue.dequeue()).toBe(6)
+        })
+        it('should return "Empty" if Queue already empty',()=>{
+            expect(queue.dequeue()).toBe("Empty")
+        })
+    })
 })

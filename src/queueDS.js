@@ -16,6 +16,9 @@ class Queue {
         this.items.unshift(element)
         return element
     }
+    dequeue(){
+        return this.isEmpty() ? "Empty" : this.items.shift()
+    }
 }
 
 module.exports = Queue
