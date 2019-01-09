@@ -9,4 +9,8 @@ describe ('the Stack data structure',()=>{
     it('should have an isEmpty method that returns true if Stack is empty',()=>{
         expect(stack.isEmpty()).toBe(true)
     })
+    it('should have isEmpty return false if Stack not empty',()=>{
+        stack.items.push(2)
+        expect(stack.isEmpty()).toBe(false)
+    })
 })

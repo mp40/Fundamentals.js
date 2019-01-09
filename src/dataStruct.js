@@ -3,7 +3,9 @@ class Stack {
         this.items = [],
         this.capacity = capacity
     }
-    isEmpty(){}
+    isEmpty(){
+        return (this.items.length < 1) ? true : false
+    }
 }
 
 module.exports = Stack
