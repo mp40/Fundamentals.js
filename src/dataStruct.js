@@ -1,8 +1,9 @@
 class Stack {
-    constructor(cap){
+    constructor(capacity){
         this.items = [],
-        this.capacity = cap
+        this.capacity = capacity
     }
+    isEmpty(){}
 }
 
 module.exports = Stack
