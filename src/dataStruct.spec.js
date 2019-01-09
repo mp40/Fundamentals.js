@@ -27,20 +27,25 @@ describe ('the Stack data structure',()=>{
     it('should have isFull return false when Stack under capacity', ()=>{
         expect(stack.isFull()).toBe(false)
     })
-})
-
-describe('the Stack should have push method that adds item to end of stack',()=>{
+    describe('the Stack should have push method that adds item to end of stack',()=>{
     
-    // Set Up
-    let stack = undefined;
-    beforeEach(()=>{
-        stack = new Stack(3)
-    })
-
-    it('should new items to top of Stack',()=>{
-        stack.push(2);
-        expect(stack.items[stack.items.length-1]).toBe(2)
-        stack.push(4)
-        expect(stack.items[stack.items.length-1]).toBe(4)
+        // Set Up not neede as in scope of original Set Up
+        
+        it('should new items to top of Stack',()=>{
+            stack.push(2);
+            expect(stack.items[stack.items.length-1]).toBe(2)
+            stack.push(4)
+            expect(stack.items[stack.items.length-1]).toBe(4)
+        })
+        it('should return Full if stack full',()=>{
+            for(let i=0; i<3; i++){
+                stack.push(i)
+            } 
+            expect(stack.push(2)).toBe("Full")
+        })
+        it('should return the value pushed into the Stack',()=>{
+            expect(stack.push(2)).toBe(2)
+        })
     })
 })
+
