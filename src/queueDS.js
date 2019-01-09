@@ -19,6 +19,9 @@ class Queue {
     dequeue(){
         return this.isEmpty() ? "Empty" : this.items.shift()
     }
+    front(){
+        return this.isEmpty() ? "Empty" : this.items[0]
+    }
 }
 
 module.exports = Queue

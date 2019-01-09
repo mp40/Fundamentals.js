@@ -55,4 +55,13 @@ describe.only('the Queue data structure',()=>{
             expect(queue.dequeue()).toBe("Empty")
         })
     })
+    describe('the Queue should have a front method',()=>{
+        it('should return the element at front of Queue',()=>{
+            queue.enqueue(1337)
+            expect(queue.front()).toBe(1337)
+        })
+        it('should return "Empty" if Queue is empty',()=>{
+            expect(queue.front()).toBe("Empty")
+        })
+    })
 })
