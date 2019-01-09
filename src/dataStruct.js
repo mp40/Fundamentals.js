@@ -4,7 +4,10 @@ class Stack {
         this.capacity = capacity
     }
     isEmpty(){
-        return (this.items.length < 1) ? true : false
+        return this.items.length < 1 ? true : false
+    }
+    isFull(){
+        return this.items.length === this.capacity ? true : false
     }
 }
 

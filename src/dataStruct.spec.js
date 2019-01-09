@@ -13,7 +13,7 @@ describe ('the Stack data structure',()=>{
     it('should have isEmpty return false if Stack not empty',()=>{
         stack.items.push(2)
         expect(stack.isEmpty()).toBe(false)
-        // Tear Down
+        // Tear Down & Set Up
         stack = new Stack(3)
     })
     it('should have an isFull method returning true when Stack is at capacity',()=>{
@@ -21,7 +21,10 @@ describe ('the Stack data structure',()=>{
             stack.items.push(i);
         }
         expect(stack.isFull()).toBe(true)
-        // Tear Down
+        // Tear Down & Set Up
         stack = new Stack(3)
+    })
+    it('should have isFull return false when Stack under capacity', ()=>{
+        expect(stack.isFull()).toBe(false)
     })
 })
