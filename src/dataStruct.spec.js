@@ -71,6 +71,9 @@ describe ('the Stack data structure',()=>{
             stack.push(9)
             expect(stack.peek()).toBe(9)
         })
+        it('should return "Empty" is empty',()=>{
+            expect(stack.peek()).toBe("Empty")
+        })
     })
 })
 
