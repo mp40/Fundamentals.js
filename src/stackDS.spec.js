@@ -1,4 +1,4 @@
-const Stack = require('./dataStruct')
+const Stack = require('./stackDS')
 
 describe ('the Stack data structure',()=>{
     // Set Up - define varable undefined, 
