@@ -17,16 +17,10 @@ class Stack {
         return element
     }
     pop(){
-        if(!this.isFull()){
-            return "Empty"
-        }
-        return this.items.pop()
+        return this.isEmpty() ? "Empty" : this.items.pop()
     }
     peek(){
-        if(this.isEmpty()){
-            return "Empty"
-        }
-        return this.items[this.items.length-1]
+        return this.isEmpty() ? "Empty" : this.items[this.items.length-1]
     }
 }
 
