@@ -14,7 +14,12 @@ describe.only('the Node Class',()=>{
 })
 
 describe.only("the BinarySearchTree",()=>{
-    const bst = new BinarySearchTree()
+    // Set Up
+    let bst = undefined;
+    beforeEach(()=>{
+        bst = new BinarySearchTree()
+    })
+    //const bst = new BinarySearchTree()
     it("should construct BinarySearchTree with property root defined as null",()=>{
         expect(bst.root).toBe(null)
     })
@@ -33,15 +38,37 @@ describe.only("the BinarySearchTree",()=>{
         })
     })
     describe('the BinarySearchTree should have an insertNode method',()=>{
-        it('should compare data to current node and move it left if smaller',()=>{
+        beforeEach(()=>{
+            // Set Up root value
             bst.insert(7)
+            // Set Up 1st left value
             bst.insert(3)
-            expect(bst.root.left).toBe(3)    
+            // Set Up 2nd right value
+            bst.insert(9)
+        })
+        it('should compare data to current node and move it left if smaller',()=>{
+            expect(bst.root.left.data).toBe(3)
+            expect(bst.root.left).toEqual({
+                data: 3,
+                left: null,
+                right: null
+            })
         })
         it('should compare data to current node and it right if larger',()=>{
-            bst.insert(7)
-            bst.insert(9)
-            expect(bst.root.right).toBe(9)
+            expect(bst.root.right).toEqual({
+                data: 9,
+                left: null,
+                right: null
+            })
+        })
+        it('should recurse through tree until it finds the correct empty position',()=>{
+            bst.insert(1)
+            expect(bst.root.left.data).not.toBe(1)
+            expect(bst.root.left.left).toEqual({
+                data: 1,
+                left: null,
+                right: null
+            })
         })
     })
 })

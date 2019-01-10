@@ -16,9 +16,15 @@ class BinarySearchTree {
     }
     insertNode(currentNode, newNode){
         if(newNode.data < currentNode.data){
-            currentNode.left = newNode.data
+            if (currentNode.left === null){
+                currentNode.left = new Node(newNode.data)
+            } else {
+                //recurse the left Node
+                this.insertNode(currentNode.left, newNode)
+            }
+            
         } else if (newNode.data > currentNode.data){
-            currentNode.right = newNode.data
+            currentNode.right = new Node(newNode.data)
         }
     }
 }
