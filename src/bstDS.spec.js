@@ -32,4 +32,16 @@ describe.only("the BinarySearchTree",()=>{
             spyInsertNode.mockRestore()
         })
     })
+    describe('the BinarySearchTree should have an insertNode method',()=>{
+        it('should compare data to current node and move it left if smaller',()=>{
+            bst.insert(7)
+            bst.insert(3)
+            expect(bst.root.left).toBe(3)    
+        })
+        it('should compare data to current node and it right if larger',()=>{
+            bst.insert(7)
+            bst.insert(9)
+            expect(bst.root.right).toBe(9)
+        })
+    })
 })

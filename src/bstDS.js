@@ -12,14 +12,14 @@ class BinarySearchTree {
     }
     insert(data){
         const newNode = new Node(data)
-        if(this.root === null){
-            this.root = newNode
-        } else {
-            this.insertNode(data)
-        }
+        this.root === null ? this.root = newNode : this.insertNode(this.root, newNode)
     }
-    insertNode(){
-
+    insertNode(currentNode, newNode){
+        if(newNode.data < currentNode.data){
+            currentNode.left = newNode.data
+        } else if (newNode.data > currentNode.data){
+            currentNode.right = newNode.data
+        }
     }
 }
 
