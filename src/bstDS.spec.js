@@ -23,5 +23,13 @@ describe.only("the BinarySearchTree",()=>{
             bst.insert(7)
             expect(bst.root.data).toBe(7)
         })
+        it('should call insertNode if root is not null',()=>{
+            const spyInsertNode = jest.spyOn(bst, 'insertNode')
+            bst.insert(7)
+            bst.insert(9)
+            expect(bst.root.data).toBe(7)
+            expect(spyInsertNode).toHaveBeenCalled()
+            spyInsertNode.mockRestore()
+        })
     })
 })
