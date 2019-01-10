@@ -22,9 +22,14 @@ class BinarySearchTree {
                 //recurse the left Node
                 this.insertNode(currentNode.left, newNode)
             }
-            
         } else if (newNode.data > currentNode.data){
-            currentNode.right = new Node(newNode.data)
+            if(currentNode.right === null){
+                currentNode.right = new Node(newNode.data)
+            } else {
+                //recurse the right Node
+                this.insertNode(currentNode.right, newNode)
+            }
+            
         }
     }
 }

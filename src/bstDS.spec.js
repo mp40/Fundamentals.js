@@ -63,9 +63,20 @@ describe.only("the BinarySearchTree",()=>{
         })
         it('should recurse through tree until it finds the correct empty position',()=>{
             bst.insert(1)
+            bst.insert(11)
+            bst.insert(2)
             expect(bst.root.left.data).not.toBe(1)
             expect(bst.root.left.left).toEqual({
                 data: 1,
+                left: null,
+                right: {
+                    data: 2,
+                    left: null,
+                    right: null
+                }
+            })
+            expect(bst.root.right.right).toEqual({
+                data: 11,
                 left: null,
                 right: null
             })
