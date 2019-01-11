@@ -82,4 +82,7 @@ describe.only("the BinarySearchTree",()=>{
             })
         })
     })
+    describe('the BinarySearchTree should have a removeNode method',()=>{
+        
+    })
 })
