@@ -36,14 +36,27 @@ class BinarySearchTree {
         this.root = this.removeNode(this.root, data)
     }
     removeNode(root, dataValue){
+        // If BST is empty
         if(root === null) {
             return null
         }
         
+        // If val less than than parent node, go left
         if(dataValue < root.data){
+            // If val matches data
             if(root.left.data === dataValue){
-                root.left = null
-                return root
+                // If node has no children
+                if(root.left.left === null && root.left.right === null){
+                    root.left = null
+                    return root
+                }
+                // If left child null and right isn't
+                if(root.left.left === null){
+                    // delete and point to child
+                }
+                if(root.left.right === null){
+
+                }
             }
         }
 

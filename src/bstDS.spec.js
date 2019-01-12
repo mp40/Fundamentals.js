@@ -116,5 +116,12 @@ describe.only("the BinarySearchTree",()=>{
             expect(bst.removeNode(bst.root,3)).toEqual(resultLeft)
             expect(bst.removeNode(bst.root, 11)).toEqual(resultAll)
         })
+        it('should reasign pointer to child when deleting parent node with one child',()=>{
+            // bst.root = data:7, left:null, right:null
+            bst.insert(3)
+            bst.insert(1)
+            expect(bst.removeNode(bst.root, 3).root.left).toEqual(1) 
+            console.log(bst.root) 
+        })
     })
 })
