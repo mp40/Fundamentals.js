@@ -32,6 +32,28 @@ class BinarySearchTree {
             
         }
     }
+    remove(data) {
+        this.root = this.removeNode(this.root, data)
+    }
+    removeNode(root, dataValue){
+        if(root === null) {
+            return null
+        }
+        
+        if(dataValue < root.data){
+            if(root.left.data === dataValue){
+                root.left = null
+                return root
+            }
+        }
+
+        if(dataValue > root.data){
+            if(root.right.data === dataValue){
+                root.right = null
+                return root
+            }
+        }
+    }
 }
 
 module.exports = {Node, BinarySearchTree} 

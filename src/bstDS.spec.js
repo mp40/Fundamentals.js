@@ -82,7 +82,39 @@ describe.only("the BinarySearchTree",()=>{
             })
         })
     })
+    describe('the BinarySearchTree should have a remove method',()=>{
+        // it("should call the removeNode method",()=>{
+        //     const removeNodeSpy = jest.spyOn(bst, 'removeNode')
+        //     bst.remove()
+        //     expect(removeNodeSpy).toHaveBeenCalled()
+        //     removeNodeSpy.mockRestore()
+        // })
+    })
     describe('the BinarySearchTree should have a removeNode method',()=>{
-        
+        let bst = new BinarySearchTree()
+        it('should return null if tree is already empty',()=>{
+            expect(bst.removeNode(bst.root, 4)).toBe(null)
+        })
+        it('should delete a leaf node, returning null to parent node',()=>{
+            const resultAll = {
+                data: 7,
+                left: null,
+                right: null
+            }
+            const resultLeft = {
+                data: 7,
+                left: null,
+                right: {
+                    data: 11,
+                    left: null,
+                    right: null
+                }
+            }
+            bst.insert(7)
+            bst.insert(3)
+            bst.insert(11)
+            expect(bst.removeNode(bst.root,3)).toEqual(resultLeft)
+            expect(bst.removeNode(bst.root, 11)).toEqual(resultAll)
+        })
     })
 })
