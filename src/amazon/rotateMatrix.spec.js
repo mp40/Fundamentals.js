@@ -1,7 +1,7 @@
 const rotateMatrix = require('./rotateMatrix')
 
 describe('rotating matrix',()=>{
-    it('should rotate matrix 90 degrees',()=>{
+    it('should rotate matrix 90 degrees anti-clockwise',()=>{
         const input =  [
             [1,  2,  3],
             [4,  5,  6],
