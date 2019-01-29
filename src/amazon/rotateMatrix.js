@@ -12,8 +12,7 @@ function rotateMatrix(matrix){
           matrix[j][i] = temp;
         }
       }
-    matrix = matrix.reverse()  
-    return matrix
+    return matrix.reverse()  
 }
 
 function flipMatrix(matrix){
@@ -29,14 +28,12 @@ function flipMatrix(matrix){
 
 function rotateAntiClockwise(matrix){
     matrix = flipMatrix(matrix)
-    matrix = matrix.reverse()
-    return matrix
+    return matrix.reverse()
 }
 
 function rotateClockwise(matrix){
     matrix = matrix.reverse()
-    matrix = flipMatrix(matrix)
-    return matrix
+    return flipMatrix(matrix)
 }
 
 
