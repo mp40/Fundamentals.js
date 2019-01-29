@@ -3,6 +3,7 @@ Given an square matrix,
 turn it by 90 degrees in anti-clockwise direction 
 without using any extra space
 */
+//below is hard coded to anti-clockwise
 function rotateMatrix(matrix){
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < i; j++) {
@@ -15,8 +16,31 @@ function rotateMatrix(matrix){
     return matrix
 }
 
+function flipMatrix(matrix){
+    for(let i=0; i<matrix.length; i++){
+        for(let j = 0; j < i; j++){
+            let temp = matrix[i][j]
+            matrix[i][j] = matrix[j][i]
+            matrix[j][i] = temp
+        }
+    }
+    return matrix
+}
 
-module.exports = rotateMatrix
+function rotateAntiClockwise(matrix){
+    matrix = flipMatrix(matrix)
+    matrix = matrix.reverse()
+    return matrix
+}
+
+function rotateClockwise(matrix){
+    matrix = matrix.reverse()
+    matrix = flipMatrix(matrix)
+    return matrix
+}
+
+
+module.exports = {rotateMatrix, rotateAntiClockwise, rotateClockwise}
 
 
 // second attempt 
