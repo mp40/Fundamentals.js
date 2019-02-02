@@ -31,6 +31,7 @@ function robotPaths(n){
         if(row < 0 || row > n-1 || col < 0 || col > n-1){
             return
         }
+        // check out if visited
         if(matrix.visited(row,col)){
             return
         } else {
@@ -49,6 +50,8 @@ function robotPaths(n){
     return paths
 }
 
+
+//this doesn't work
 function iteratePaths(n){
     const matrix = makeMatrix(n)
     let paths = 0
@@ -57,10 +60,7 @@ function iteratePaths(n){
     let lastRow = 0
     let lastCol = 0
 
-let count = 0
-
     while(stack.length > 0){
-        debugger
         let row = stack[stack.length-1][0]
         let col = stack[stack.length-1][1]
         if(row+1 < n-1 && !matrix.visited(row+1, col)){
@@ -86,7 +86,6 @@ let count = 0
             lastRow = temp[0]
             lastCol = temp[1]
         }
-        count++
     }
     return paths
 }
