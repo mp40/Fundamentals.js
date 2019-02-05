@@ -1,4 +1,4 @@
-function onlineTest(sentences, queries) {
+function onlineTest() {
     // Write your code here
 }
 
