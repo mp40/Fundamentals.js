@@ -14,6 +14,14 @@ function containedAverage (arr){
     })
 }
 
+// not working...
+// function containedAverage (arr){
+//     return arr.reduce((sum, num)=>{
+//         sum += num
+//         return sum/arr.length
+//     },0)
+// }
+
 function reduceAsMap (arr) {
     return arr.reduce((final, num)=>{
         final.push(num*2)
@@ -21,4 +29,11 @@ function reduceAsMap (arr) {
     },[])
 }
 
-module.exports = {average, containedAverage, reduceAsMap}
+function improvedMap (arr, multiplier) {
+    return arr.reduce((final, num)=>{
+        final.push(num * multiplier)
+        return final
+    },[])
+}
+
+module.exports = {average, containedAverage, reduceAsMap, improvedMap}
