@@ -14,4 +14,11 @@ function containedAverage (arr){
     })
 }
 
-module.exports = {average, containedAverage}
+function reduceAsMap (arr) {
+    return arr.reduce((final, num)=>{
+        final.push(num*2)
+        return final
+    },[])
+}
+
+module.exports = {average, containedAverage, reduceAsMap}
