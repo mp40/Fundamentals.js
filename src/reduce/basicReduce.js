@@ -5,4 +5,13 @@ function average (arr) {
     return sum/arr.length
 }
 
-module.exports = {average}
+function containedAverage (arr){
+    return arr.reduce((sum, num, dex)=>{
+        sum += num
+        return dex === arr.length-1 ?
+            sum/arr.length :
+            sum
+    })
+}
+
+module.exports = {average, containedAverage}
