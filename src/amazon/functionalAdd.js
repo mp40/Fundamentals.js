@@ -7,3 +7,5 @@ const add = function(a, b){
 
 console.log(add(2,5))
 console.log(add(2)(5))
+
+module.exports = add

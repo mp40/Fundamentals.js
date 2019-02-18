@@ -1,3 +1,8 @@
+/*
+Exercises from
+https://medium.freecodecamp.org/reduce-f47a7da511a9
+*/
+
 function average (arr) {
     const sum = arr.reduce((sum,num)=>{
         return sum + num;
